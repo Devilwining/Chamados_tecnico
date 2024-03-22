@@ -27,7 +27,7 @@ namespace ChamadosTecnicosTec55.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SJR0577163W10-1\\SQLEXPRESS;Initial Catalog=bd_Chamados_Tec55;Integrat" +
-            "ed Security=True")]
+            "ed Security=True;")]
         public string Conexao {
             get {
                 return ((string)(this["Conexao"]));
