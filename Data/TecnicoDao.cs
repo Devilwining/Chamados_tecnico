@@ -25,7 +25,7 @@ namespace Data
         {
             using (SqlConnection conexaoBd = new SqlConnection(_conexao))
             { 
-                string sql = "Insert into Tecnicos(Nome,Especialidade,emal,senha,Obs) values(@Nome,@especialidade,@email,@senha,@Obs)";
+                string sql = "Insert into Tecnicos(Nome,Especialidade,Email,senha,Obs) values(@Nome,@especialidade,@Email,@senha,@Obs)";
 
                 using (SqlCommand comando = new SqlCommand(sql, conexaoBd))
                 {
