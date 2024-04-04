@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChamadosTecnicosTec55.Adicionar;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -69,6 +70,23 @@ namespace ChamadosTecnicosTec55
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
             coresFormulario();
+        }
+
+        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //itamciar
+            var formcliente = new frmAdicionarCliente();
+            // Define o formulario pai
+            formcliente.MdiParent = this;
+            formcliente.Show();
+        }
+
+        private void técnicoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formtecnico = new frmTecnicoAdicionar();
+            // Define o formulario pai no C#
+            formtecnico.MdiParent = this;
+            formtecnico.Show();
         }
     }
 }

@@ -61,6 +61,12 @@
     <Compile Include="Adicionar\frmTecnicoAdicionar.Designer.cs">
       <DependentUpon>frmTecnicoAdicionar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Alterar\frmGirirClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alterar\frmGirirClientes.Designer.cs">
+      <DependentUpon>frmGirirClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,9 @@
     <EmbeddedResource Include="Adicionar\frmTecnicoAdicionar.resx">
       <DependentUpon>frmTecnicoAdicionar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Alterar\frmGirirClientes.resx">
+      <DependentUpon>frmGirirClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -92,6 +101,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -112,6 +122,9 @@
       <Project>{1db37985-310c-4aad-b452-6ea3d001e117}</Project>
       <Name>Data</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupa.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
