@@ -89,6 +89,7 @@
             this.BtnIcluir.TabIndex = 4;
             this.BtnIcluir.Text = "INCLUIR CLIENTE";
             this.BtnIcluir.UseVisualStyleBackColor = false;
+            this.BtnIcluir.Click += new System.EventHandler(this.BtnIcluir_Click);
             // 
             // label1
             // 
@@ -143,6 +144,7 @@
             this.Controls.Add(this.DgvDados);
             this.Name = "frmGirirClientes";
             this.Text = "frmGirirClientes";
+            this.Load += new System.EventHandler(this.frmGirirClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvDados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnP)).EndInit();
             this.ResumeLayout(false);

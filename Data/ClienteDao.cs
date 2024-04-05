@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data; //ADD.net
 using System.Data.SqlClient;
-using System.Linq.Expressions; // ADD para SQL SERVER
+using System.Linq.Expressions;
+using System.Net.Http.Headers; // ADD para SQL SERVER
 
 namespace Data
 {
@@ -47,12 +48,35 @@ namespace Data
                             }
                         }
 
-
-
-
-
                     }
 
-             }  
+             }
+        public DataSet BuscarClientes(string pesquisa = "")
+        {
+            //Constante com o SQL que faz buscar a partir de texto
+            const string query = "Select * From cliente Where Nome like @pesquisa";
+
+            //Vliadar Erro
+            try
+            {
+                using (var conexaoBd = new SqlConnection(_conexao))
+                using (var comando = new SqlCommand(query ,conexaoBd))
+                using (var adaptador = new SqlDataAdapter(comando))
+                {                              //$ = tranforma tudo que esta etre {} se torna variavel
+                    string parametroPesquisa = $"%{pesquisa}%";
+                    comando.Parameters.AddWithValue("@pesquisa", parametroPesquisa);
+                    conexaoBd.Open();
+                    var dsClientes = new DataSet();
+                    adaptador.Fill(dsClientes, "Cliente");
+                    return dsClientes;
+                }
+
+            }
+            catch (Exception ex)
+            { 
+                throw new Exception($"Erro ao buscar Cliente :{ex.Message}");            
+            }
+            
+        }
     }
 }
