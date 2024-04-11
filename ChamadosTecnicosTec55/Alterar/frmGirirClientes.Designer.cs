@@ -42,9 +42,12 @@
             // 
             // DgvDados
             // 
+            this.DgvDados.AllowUserToAddRows = false;
+            this.DgvDados.AllowUserToDeleteRows = false;
             this.DgvDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvDados.Location = new System.Drawing.Point(12, 60);
             this.DgvDados.Name = "DgvDados";
+            this.DgvDados.ReadOnly = true;
             this.DgvDados.Size = new System.Drawing.Size(776, 284);
             this.DgvDados.TabIndex = 0;
             // 
@@ -78,6 +81,7 @@
             this.BtnAlternar.TabIndex = 3;
             this.BtnAlternar.Text = "ALTERNAR CLIENTE";
             this.BtnAlternar.UseVisualStyleBackColor = false;
+            this.BtnAlternar.Click += new System.EventHandler(this.BtnAlternar_Click);
             // 
             // BtnIcluir
             // 
