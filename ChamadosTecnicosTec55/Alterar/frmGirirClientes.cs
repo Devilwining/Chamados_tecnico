@@ -69,7 +69,8 @@ namespace ChamadosTecnicosTec55.Alterar
             {
                 // obtém o código do cliente da limha selecionada
                 int codigo = Convert.ToInt32(DgvDados.CurrentRow.Cells[0].Value);
-                var frmAlterar = new Aterar_Clientes();
+                
+                var frmAlterar = new Aterar_Clientes(codigo);
                 frmAlterar.ShowDialog();
 
                 // Apos a tela fechar listar os clientes cadastrados
