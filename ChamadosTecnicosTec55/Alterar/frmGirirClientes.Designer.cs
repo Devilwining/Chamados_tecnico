@@ -70,6 +70,7 @@
             this.BtnExcluir.TabIndex = 2;
             this.BtnExcluir.Text = "EXCLUIR CLIENTE";
             this.BtnExcluir.UseVisualStyleBackColor = false;
+            this.BtnExcluir.Click += new System.EventHandler(this.BtnExcluir_Click);
             // 
             // BtnAlternar
             // 

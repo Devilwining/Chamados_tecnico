@@ -30,10 +30,10 @@
         {
             this.Txb_Nome = new System.Windows.Forms.TextBox();
             this.Txb_Pfsss = new System.Windows.Forms.TextBox();
-            this.Txb_setor = new System.Windows.Forms.TextBox();
+            this.Txb_senha_T = new System.Windows.Forms.TextBox();
             this.Txb_Obs = new System.Windows.Forms.TextBox();
             this.Btn_Ok = new System.Windows.Forms.Button();
-            this.Txb_Cod = new System.Windows.Forms.TextBox();
+            this.Txb_Cod_T = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.sdb = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -55,12 +55,12 @@
             this.Txb_Pfsss.Size = new System.Drawing.Size(348, 20);
             this.Txb_Pfsss.TabIndex = 1;
             // 
-            // Txb_setor
+            // Txb_senha_T
             // 
-            this.Txb_setor.Location = new System.Drawing.Point(11, 205);
-            this.Txb_setor.Name = "Txb_setor";
-            this.Txb_setor.Size = new System.Drawing.Size(348, 20);
-            this.Txb_setor.TabIndex = 2;
+            this.Txb_senha_T.Location = new System.Drawing.Point(11, 205);
+            this.Txb_senha_T.Name = "Txb_senha_T";
+            this.Txb_senha_T.Size = new System.Drawing.Size(348, 20);
+            this.Txb_senha_T.TabIndex = 2;
             // 
             // Txb_Obs
             // 
@@ -80,13 +80,13 @@
             this.Btn_Ok.UseVisualStyleBackColor = true;
             this.Btn_Ok.Click += new System.EventHandler(this.Btn_Ok_Click);
             // 
-            // Txb_Cod
+            // Txb_Cod_T
             // 
-            this.Txb_Cod.Location = new System.Drawing.Point(258, 36);
-            this.Txb_Cod.Name = "Txb_Cod";
-            this.Txb_Cod.ReadOnly = true;
-            this.Txb_Cod.Size = new System.Drawing.Size(100, 20);
-            this.Txb_Cod.TabIndex = 6;
+            this.Txb_Cod_T.Location = new System.Drawing.Point(258, 36);
+            this.Txb_Cod_T.Name = "Txb_Cod_T";
+            this.Txb_Cod_T.ReadOnly = true;
+            this.Txb_Cod_T.Size = new System.Drawing.Size(100, 20);
+            this.Txb_Cod_T.TabIndex = 6;
             // 
             // label1
             // 
@@ -142,16 +142,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(371, 450);
+            this.ClientSize = new System.Drawing.Size(371, 499);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.sdb);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Txb_Cod);
+            this.Controls.Add(this.Txb_Cod_T);
             this.Controls.Add(this.Btn_Ok);
             this.Controls.Add(this.Txb_Obs);
-            this.Controls.Add(this.Txb_setor);
+            this.Controls.Add(this.Txb_senha_T);
             this.Controls.Add(this.Txb_Pfsss);
             this.Controls.Add(this.Txb_Nome);
             this.Name = "Aterar_Clientes";
@@ -165,10 +165,10 @@
 
         private System.Windows.Forms.TextBox Txb_Nome;
         private System.Windows.Forms.TextBox Txb_Pfsss;
-        private System.Windows.Forms.TextBox Txb_setor;
+        private System.Windows.Forms.TextBox Txb_senha_T;
         private System.Windows.Forms.TextBox Txb_Obs;
         private System.Windows.Forms.Button Btn_Ok;
-        private System.Windows.Forms.TextBox Txb_Cod;
+        private System.Windows.Forms.TextBox Txb_Cod_T;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label sdb;
         private System.Windows.Forms.Label label3;

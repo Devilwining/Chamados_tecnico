@@ -62,7 +62,9 @@ namespace Data
                 using (var conexaoBd = new SqlConnection(_conexao))
                 using (var comando = new SqlCommand(query, conexaoBd))
                 using (var adaptador = new SqlDataAdapter(comando))
-                {                              //$ = tranforma tudo que esta etre {} se torna variavel
+                {                             
+                    //$ = tranforma tudo que esta etre {} se torna variavel
+
                     string parametroPesquisa = $"%{pesquisa}%";
                     comando.Parameters.AddWithValue("@pesquisa", parametroPesquisa);
                     conexaoBd.Open();
@@ -139,10 +141,28 @@ namespace Data
             {
                 throw new Exception($"Erro{ex.Message}");
             }
-
         }
-
-
-}   }   
+        // Excluir cliente
+        public void ExcluirCliente(int CodigoCliente) 
+        {
+            const string qurry = @"delete from cliente where CodigoCliente = @CodigoCliente";
+            try 
+            {
+                using(var conexaoBd =new SqlConnection(_conexao))
+                using(var comando = new SqlCommand(qurry, conexaoBd)) 
+                {
+                    comando.Parameters.AddWithValue("@CodigoCliente", CodigoCliente);
+                    conexaoBd.Open();
+                    comando.ExecuteNonQuery();                          
+                }                                  
+            }
+            catch (Exception ex) 
+            {
+                throw new Exception($"Erro ao excluir{ex.Message}", ex);                       
+            }                       
+        }
+    }
+    
+}     
    
 

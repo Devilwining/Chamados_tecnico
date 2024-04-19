@@ -23,12 +23,12 @@ namespace ChamadosTecnicosTec55.Alterar
         private void ListarCliente() 
         {
             //Chama o Cliente DAO
-            ClienteDao ClienteDao = new ClienteDao(_conexao);
+            ClienteDao clienteDao = new ClienteDao(_conexao);
             // Captura o valor digitado na barra de texto TXB
             string busca = txtAdicionarCliente.Text.ToString();
             //Chama o Metodo BuscaCliente do objeto
             DataSet ds = new DataSet();
-            ds = ClienteDao.BuscarClientes(busca);
+            ds = clienteDao.BuscarClientes(busca);
             // Defini o DataSource do DataGridView
             DgvDados.DataSource = ds;
             // Defini o Membro do DatoSet
@@ -80,6 +80,31 @@ namespace ChamadosTecnicosTec55.Alterar
             {
                 // Exiba uma mensagem de Aviso se nenhum linha estiver selecionada
                 MessageBox.Show("Selecione um registro para alterar");            
+            }
+        }
+
+        private void BtnExcluir_Click(object sender, EventArgs e)
+        {
+            // Botão excluir
+            // selecinar data grid , Capturar ID, Enviar para DAO , excluir
+            if (DgvDados.SelectedRows.Count > 0)
+            {
+
+                int codigo = Convert.ToInt32(DgvDados.CurrentRow.Cells[0].Value);
+
+                var resultado = MessageBox.Show("Deseja Excluir ?", "Pergunta", MessageBoxButtons.YesNo,MessageBoxIcon.Question,MessageBoxDefaultButton.Button2);
+
+                if (resultado == DialogResult.Yes)
+                {
+
+                    ClienteDao clientedao = new ClienteDao(_conexao);
+                    clientedao.ExcluirCliente(codigo);
+                    ListarCliente();
+                }
+            }
+            else 
+            {
+                MessageBox.Show("Selecione um Registro !");                    
             }
         }
     }

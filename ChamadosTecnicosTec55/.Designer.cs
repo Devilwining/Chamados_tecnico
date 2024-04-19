@@ -33,7 +33,7 @@
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.técnicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestorDeChamadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestorDeTecnico = new System.Windows.Forms.ToolStripMenuItem();
             this.gestorDeClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.claculadoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.documentaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,7 +47,7 @@
             this.menuStrip.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastroToolStripMenuItem,
-            this.gestorDeChamadosToolStripMenuItem,
+            this.gestorDeTecnico,
             this.gestorDeClienteToolStripMenuItem,
             this.claculadoraToolStripMenuItem,
             this.documentaçãoToolStripMenuItem,
@@ -84,11 +84,11 @@
             this.técnicoToolStripMenuItem.Text = "Técnico";
             this.técnicoToolStripMenuItem.Click += new System.EventHandler(this.técnicoToolStripMenuItem_Click);
             // 
-            // gestorDeChamadosToolStripMenuItem
+            // gestorDeTecnico
             // 
-            this.gestorDeChamadosToolStripMenuItem.Name = "gestorDeChamadosToolStripMenuItem";
-            this.gestorDeChamadosToolStripMenuItem.Size = new System.Drawing.Size(129, 20);
-            this.gestorDeChamadosToolStripMenuItem.Text = "Gestor de Chamados";
+            this.gestorDeTecnico.Name = "gestorDeTecnico";
+            this.gestorDeTecnico.Size = new System.Drawing.Size(112, 20);
+            this.gestorDeTecnico.Text = "Gestor de Tecnico";
             // 
             // gestorDeClienteToolStripMenuItem
             // 
@@ -152,7 +152,7 @@
         private System.Windows.Forms.ToolStripMenuItem cadastroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem técnicoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gestorDeChamadosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestorDeTecnico;
         private System.Windows.Forms.ToolStripMenuItem gestorDeClienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem claculadoraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem documentaçãoToolStripMenuItem;

@@ -36,10 +36,10 @@ namespace ChamadosTecnicosTec55
                     this.Close();
                 }
                 
-                Txb_Cod.Text = cliente.CodigoCliente.ToString();
+                Txb_Cod_T.Text = cliente.CodigoCliente.ToString();
                 Txb_Nome.Text = cliente.Nome;
                 Txb_Pfsss.Text = cliente.Profissao;
-                Txb_setor.Text = cliente.Setor;
+                Txb_senha_T.Text = cliente.Setor;
                 Txb_Obs.Text = cliente.Obs;
             
             }
@@ -54,10 +54,10 @@ namespace ChamadosTecnicosTec55
             {
                 cliente.Nome = Txb_Nome.Text;
                 cliente.Profissao = Txb_Pfsss.Text;
-                cliente.Setor = Txb_setor.Text;
+                cliente.Setor = Txb_senha_T.Text;
                 cliente.Obs = Txb_Obs.Text;
 
-                int Codigo = Convert.ToInt32(Txb_Cod.Text);
+                int Codigo = Convert.ToInt32(Txb_Cod_T.Text);
 
                 cliente.CodigoCliente = Codigo;
 
