@@ -25,7 +25,7 @@ namespace Data
         {
             using (SqlConnection conexaoBd = new SqlConnection(_conexao))
             {
-                string sql = "Insert into Tecnicos(Nome,Especialidade,Email,senha,Obs) values(@Nome,@especialidade,@Email,@senha,@Obs)";
+                string sql = "Insert into Tecnicos(Nome,Especialidade,Email,senha,Obs) values(@Nome,@Especialidade,@Email,@Senha,@Obs)";
 
                 using (SqlCommand comando = new SqlCommand(sql, conexaoBd))
                 {
@@ -54,7 +54,7 @@ namespace Data
         public DataSet BuscarTecnico(string pesquisa = "")
         {
             //Constante com o SQL que faz buscar a partir de texto
-            const string query = "Select * From Tecnico Where Nome like @pesquisa";
+            const string query = "Select * From Tecnicos Where Nome like @pesquisa";
 
             //Vliadar Erro
             try
@@ -85,7 +85,7 @@ namespace Data
         public Tecnico ObtemTecnico(int codigoTecnico)
         {
             // Define o sql para obter o cliente
-            const string query = @"select * from Tecnico where CodigoTecnico = @CodigoTecnico";
+            const string query = @"select * from Tecnicos where CodigoTecnico = @CodigoTecnico";
 
             Tecnico tecnico = null;
 
@@ -103,10 +103,10 @@ namespace Data
                         {
                             tecnico = new Tecnico
                              {
-                                CodigoTecnico = Convert.ToInt32(reader["CodigoTcnico"]),
+                                CodigoTecnico = Convert.ToInt32(reader["CodigoTecnico"]),
                                 Nome = reader["Nome"].ToString(),
                                 Especialidade = reader["Especialidade"].ToString(),
-                                Email = reader["email"].ToString(),
+                                Email = reader["Email"].ToString(),
                                 Obs = reader["Obs"].ToString(),
                                 Senha = reader["Senha"].ToString()
                              };
@@ -122,7 +122,7 @@ namespace Data
         }
         public void AlterarTecnico(Tecnico tecnico)
         {
-            const string query = @"update Tecnico set Nome=@Nome , Senha=@Senha , Especialidade=@Especiacidade, Obs=@Observacao where CodigoTecnico = @CodTecnico";
+            const string query = @"update Tecnicos set Nome=@Nome , Senha=@Senha , Especialidade=@Especialidade, Obs=@Observacaom , Email=@Email where CodigoTecnico = @CodTecnico";
 
             try
             {
@@ -134,7 +134,8 @@ namespace Data
                     comando.Parameters.AddWithValue("@Especialidade", tecnico.Especialidade);
                     comando.Parameters.AddWithValue("@Observacao", tecnico.Obs);
                     comando.Parameters.AddWithValue("@CodTecnico", tecnico.CodigoTecnico);
-
+                    comando.Parameters.AddWithValue("@Email", tecnico.Email);
+                    
                     conexaoBd.Open();
                     comando.ExecuteNonQuery();
                 }
@@ -147,13 +148,13 @@ namespace Data
         // Excluir cliente
         public void ExcluirTecnico(int CodigoTecnico)
         {
-            const string qurry = @"delete from Tecnico where CodigoTecnico  = @TecnicoCliente";
+            const string qurry = @"delete from Tecnicos where CodigoTecnico  = @CodigoTecnico";
             try
             {
                 using (var conexaoBd = new SqlConnection(_conexao))
                 using (var comando = new SqlCommand(qurry, conexaoBd))
                 {
-                    comando.Parameters.AddWithValue("@CodigoCliente", CodigoTecnico);
+                    comando.Parameters.AddWithValue("@CodigoTecnico", CodigoTecnico);
                     conexaoBd.Open();
                     comando.ExecuteNonQuery();
                 }

@@ -26,7 +26,7 @@ namespace ChamadosTecnicosTec55
             TecnicoDao tecnicoDao = new TecnicoDao(_conexao);
             // Captura o valor digitado na barra de texto TXB
             string busca = txtAdicionarTecnicos.Text.ToString();
-            //Chama o Metodo BuscaCliente do objeto
+            //Chama o Metodo BuscaTecnico do objeto
             DataSet ds = new DataSet();
             ds = tecnicoDao.BuscarTecnico(busca);
             // Defini o DataSource do DataGridView
@@ -47,18 +47,6 @@ namespace ChamadosTecnicosTec55
             }
         }
 
-        private void frmGirirTecnico_Load(object sender, EventArgs e)
-        {
-            ListarTecnico();
-        }
-
-        private void BtnIcluir_Click(object sender, EventArgs e)
-        {
-            var dados = new frmAdicionarCliente();
-            dados.ShowDialog();
-            ListarTecnico();
-        }
-
         private void BtnIcluir_Click_1(object sender, EventArgs e)
         {
             var dados = new frmTecnicoAdicionar();
@@ -66,6 +54,56 @@ namespace ChamadosTecnicosTec55
             ListarTecnico();
         }
 
+        private void BtnAlternar_Click(object sender, EventArgs e)
+        {
+            // Verificar se agulm linha selecionada no DGV
+            if (DgvDados_T.SelectedRows.Count > 0)
+            {
+                // obtém o código do cliente da limha selecionada
+                int codigo = Convert.ToInt32(DgvDados_T.CurrentRow.Cells[0].Value);
+
+                var frmAlterar = new AlterarTecnico(codigo);
+                frmAlterar.ShowDialog();
+
+                // Apos a tela fechar listar os clientes cadastrados
+                ListarTecnico();
+            }
+            else
+            {
+                // Exiba uma mensagem de Aviso se nenhum linha estiver selecionada
+                MessageBox.Show("Selecione um registro para alterar");
+            }
+        }
+
+        private void BtnExcluir_Click(object sender, EventArgs e)
+        {
+            // Botão excluir
+            // selecinar data grid , Capturar ID, Enviar para DAO , excluir
+            if (DgvDados_T.SelectedRows.Count > 0)
+            {
+
+                int codigo = Convert.ToInt32(DgvDados_T.CurrentRow.Cells[0].Value);
+
+                var resultado = MessageBox.Show("Deseja Excluir ?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+
+                if (resultado == DialogResult.Yes)
+                {
+
+                    TecnicoDao tecnicodao = new TecnicoDao(_conexao);
+                    tecnicodao.ExcluirTecnico(codigo);
+                    ListarTecnico();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecione um Registro !");
+            }
+        }
+
+        private void frmGeririTecnico_Load(object sender, EventArgs e)
+        {
+            ListarTecnico();
+        }
     }
-    
 }
+        

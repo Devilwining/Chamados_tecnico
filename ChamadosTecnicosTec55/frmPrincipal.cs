@@ -57,15 +57,8 @@ namespace ChamadosTecnicosTec55
                 catch (Exception ex) 
                 {
                     MessageBox.Show(ex.Message);
-                }
-                
-                
-            
-            
-            
-            }
-        
-        
+                }                                                                    
+            }                
         }
 
         private void frmPrincipal_Load(object sender, EventArgs e)
@@ -95,6 +88,12 @@ namespace ChamadosTecnicosTec55
             var dados = new frmGirirClientes();
             dados.ShowDialog();
             
+        }
+
+        private void gestorDeTecnico_Click(object sender, EventArgs e)
+        {
+            var dados = new frmGeririTecnico();
+            dados.ShowDialog();
         }
     }
 }

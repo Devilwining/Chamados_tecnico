@@ -89,6 +89,7 @@
             this.gestorDeTecnico.Name = "gestorDeTecnico";
             this.gestorDeTecnico.Size = new System.Drawing.Size(112, 20);
             this.gestorDeTecnico.Text = "Gestor de Tecnico";
+            this.gestorDeTecnico.Click += new System.EventHandler(this.gestorDeTecnico_Click);
             // 
             // gestorDeClienteToolStripMenuItem
             // 

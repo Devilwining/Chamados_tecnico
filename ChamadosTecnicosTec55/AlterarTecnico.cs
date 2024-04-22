@@ -30,7 +30,7 @@ namespace ChamadosTecnicosTec55
                 //Se o cliente não foi encontrado
                 if (tecnico == null)
                 {
-                    MessageBox.Show("Cliente não encontrado");
+                    MessageBox.Show("Tecnico não encontrado");
                     this.Close();
                 }
 
@@ -43,10 +43,33 @@ namespace ChamadosTecnicosTec55
             }
 
         }
+
+        private void Btn_Ok_Click(object sender, EventArgs e)
+        {
+            Tecnico tecnico = new Tecnico();
+            TecnicoDao tecnicoDeo = new TecnicoDao(_conexao);
+
+            try
+            {               
+                tecnico.Nome = Txb_Nome_T.Text;
+                tecnico.Especialidade = Txb_ESP_T.Text;
+                tecnico.Senha = Txb_senha_T.Text;
+                tecnico.Email = txb_email_T.Text;
+                tecnico.Obs = Txb_Obs_T.Text;
+
+                int Codigo = Convert.ToInt32(Txb_Cod_T.Text);
+
+                tecnico.CodigoTecnico = Codigo;
+
+                tecnicoDeo.AlterarTecnico(tecnico);
+
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }       
     }
-
-
-
-
 }
 

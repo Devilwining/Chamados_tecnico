@@ -109,6 +109,7 @@
             this.Btn_Ok.TabIndex = 16;
             this.Btn_Ok.Text = "Ok";
             this.Btn_Ok.UseVisualStyleBackColor = true;
+            this.Btn_Ok.Click += new System.EventHandler(this.Btn_Ok_Click);
             // 
             // Txb_Obs_T
             // 
@@ -145,6 +146,7 @@
             this.txb_email_T.Name = "txb_email_T";
             this.txb_email_T.Size = new System.Drawing.Size(348, 20);
             this.txb_email_T.TabIndex = 23;
+            
             // 
             // label2
             // 

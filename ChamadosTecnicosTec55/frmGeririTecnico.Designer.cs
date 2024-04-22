@@ -87,6 +87,7 @@
             this.BtnAlternar.TabIndex = 12;
             this.BtnAlternar.Text = "ALTERNAR TECNICOS";
             this.BtnAlternar.UseVisualStyleBackColor = false;
+            this.BtnAlternar.Click += new System.EventHandler(this.BtnAlternar_Click);
             // 
             // BtnExcluir
             // 
@@ -98,6 +99,7 @@
             this.BtnExcluir.TabIndex = 11;
             this.BtnExcluir.Text = "EXCLUIR TECNICOS";
             this.BtnExcluir.UseVisualStyleBackColor = false;
+            this.BtnExcluir.Click += new System.EventHandler(this.BtnExcluir_Click);
             // 
             // txtAdicionarTecnicos
             // 
@@ -146,6 +148,7 @@
             this.Controls.Add(this.DgvDados_T);
             this.Name = "frmGeririTecnico";
             this.Text = "frmGeririTecnico";
+            this.Load += new System.EventHandler(this.frmGeririTecnico_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvDados_T)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnP_T)).EndInit();
             this.ResumeLayout(false);
